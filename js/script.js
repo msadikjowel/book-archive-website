@@ -11,7 +11,7 @@ const search = () => {
     // info message for user wait when button clicked
     const inputText = inputField.value;
     if (inputText !== 0) {
-        errorMessage.innerHTML = `You searched for <span class = "fw-bold"> ${inputText} </span>, please wait for load...`
+        errorMessage.innerHTML = `You are searching for <span class = "fw-bold"> ${inputText} </span>, please wait for load...`
     }
 
     // fetching data from API
@@ -41,7 +41,7 @@ const displayBook = books => {
     // showing how many results found
     const resultPara = document.createElement('p');
     resultPara.innerHTML = `
-        <p class = "fw-light"> ${bookSlice.length} results found <p>
+        <p class = "fw-light"> ${bookSlice.length} results found from ${books.length} loaded results. <p>
     `
     result.appendChild(resultPara);
 
@@ -59,7 +59,7 @@ const displayBook = books => {
             <img
             style = "width: 200px; height:300px"
              class = "img-fluid rounded mx-auto d-block" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
-             
+
             <div class="card-body">
                 <h5 class="card-title">${book.title}</h5>
                 <p class="card-text">By: ${book.author_name}</p>
